@@ -23,6 +23,7 @@
   export let maxSize = Infinity;
   export let minSize = 0;
   export let multiple = true;
+  export let directory = false;
   export let preventDropOnDocument = true;
   export let noClick = false;
   export let noKeyboard = false;
@@ -343,6 +344,7 @@
   <input
     {accept}
     {multiple}
+    webkitdirectory={directory}
     type="file"
     name={name}
     autocomplete="off"
