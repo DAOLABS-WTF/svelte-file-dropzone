@@ -327,6 +327,7 @@
 
 <svelte:window on:focus={onWindowFocus} on:dragover={onDocumentDragOver} on:drop={onDocumentDrop} />
 
+<!-- NOTE: the webkitdirectory cannot even exist on the input even if set to false -->
 <div
   bind:this={rootRef}
   tabindex="0"
@@ -344,7 +345,7 @@
   <input
     {accept}
     {multiple}
-    webkitdirectory={directory}
+    {...(directory ? { 'webkitdirectory': true } : {})}
     type="file"
     name={name}
     autocomplete="off"
